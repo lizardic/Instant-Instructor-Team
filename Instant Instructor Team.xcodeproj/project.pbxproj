@@ -133,6 +133,7 @@
 		C5EBD0682599358600AF958D /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		C5EBD06A2599358A00AF958D /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		C5EBD06C2599358E00AF958D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		C5EBD06E259940A100AF958D /* Instant Instructor Team.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Instant Instructor Team.entitlements"; sourceTree = "<group>"; };
 		DD92F4D4517D919BAAA1442F /* Pods-Instant Instructor Team.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instant Instructor Team.release.xcconfig"; path = "Target Support Files/Pods-Instant Instructor Team/Pods-Instant Instructor Team.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +178,7 @@
 		C5EBCFCF2598178C00AF958D /* Instant Instructor Team */ = {
 			isa = PBXGroup;
 			children = (
+				C5EBD06E259940A100AF958D /* Instant Instructor Team.entitlements */,
 				C5EBD04925991CE400AF958D /* API New */,
 				C5EBD03C25991CB400AF958D /* Controller New */,
 				C5EBD02A25991C6600AF958D /* ViewModel New */,
