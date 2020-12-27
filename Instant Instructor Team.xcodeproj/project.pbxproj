@@ -7,25 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33EEF6E88F739C8566B9009F /* Pods_Instant_Instructor_Team.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B703C1DB5A26A6F541189F26 /* Pods_Instant_Instructor_Team.framework */; };
 		C5EBCFD12598178C00AF958D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EBCFD02598178C00AF958D /* AppDelegate.swift */; };
 		C5EBCFD32598178C00AF958D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EBCFD22598178C00AF958D /* SceneDelegate.swift */; };
 		C5EBCFD52598178C00AF958D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EBCFD42598178C00AF958D /* ViewController.swift */; };
 		C5EBCFD82598178C00AF958D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5EBCFD62598178C00AF958D /* Main.storyboard */; };
 		C5EBCFDB2598178C00AF958D /* Instant_Instructor_Team.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5EBCFD92598178C00AF958D /* Instant_Instructor_Team.xcdatamodeld */; };
-		C5EBCFDD2598179C00AF958D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5EBCFDC2598179C00AF958D /* Assets.xcassets */; };
 		C5EBCFE02598179C00AF958D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5EBCFDE2598179C00AF958D /* LaunchScreen.storyboard */; };
+		C5EBCFE8259819D300AF958D /* API in Resources */ = {isa = PBXBuildFile; fileRef = C5EBCFE7259819D300AF958D /* API */; };
+		C5EBCFEB25981A1B00AF958D /* Controller in Resources */ = {isa = PBXBuildFile; fileRef = C5EBCFEA25981A1B00AF958D /* Controller */; };
+		C5EBCFF025981A3000AF958D /* Model in Resources */ = {isa = PBXBuildFile; fileRef = C5EBCFEC25981A2F00AF958D /* Model */; };
+		C5EBCFF125981A3000AF958D /* Utils in Resources */ = {isa = PBXBuildFile; fileRef = C5EBCFED25981A2F00AF958D /* Utils */; };
+		C5EBCFF225981A3000AF958D /* View in Resources */ = {isa = PBXBuildFile; fileRef = C5EBCFEE25981A2F00AF958D /* View */; };
+		C5EBCFF325981A3000AF958D /* ViewModel in Resources */ = {isa = PBXBuildFile; fileRef = C5EBCFEF25981A2F00AF958D /* ViewModel */; };
+		C5EBCFF725981A6B00AF958D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5EBCFF625981A6300AF958D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		91CD440722E6E1EA172BD102 /* Pods-Instant Instructor Team.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instant Instructor Team.debug.xcconfig"; path = "Target Support Files/Pods-Instant Instructor Team/Pods-Instant Instructor Team.debug.xcconfig"; sourceTree = "<group>"; };
+		B703C1DB5A26A6F541189F26 /* Pods_Instant_Instructor_Team.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instant_Instructor_Team.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5EBCFCD2598178C00AF958D /* Instant Instructor Team.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Instant Instructor Team.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5EBCFD02598178C00AF958D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5EBCFD22598178C00AF958D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C5EBCFD42598178C00AF958D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C5EBCFD72598178C00AF958D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5EBCFDA2598178C00AF958D /* Instant_Instructor_Team.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Instant_Instructor_Team.xcdatamodel; sourceTree = "<group>"; };
-		C5EBCFDC2598179C00AF958D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5EBCFDF2598179C00AF958D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5EBCFE12598179C00AF958D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5EBCFE7259819D300AF958D /* API */ = {isa = PBXFileReference; lastKnownFileType = folder; path = API; sourceTree = "<group>"; };
+		C5EBCFEA25981A1B00AF958D /* Controller */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Controller; sourceTree = "<group>"; };
+		C5EBCFEC25981A2F00AF958D /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
+		C5EBCFED25981A2F00AF958D /* Utils */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Utils; sourceTree = "<group>"; };
+		C5EBCFEE25981A2F00AF958D /* View */ = {isa = PBXFileReference; lastKnownFileType = folder; path = View; sourceTree = "<group>"; };
+		C5EBCFEF25981A2F00AF958D /* ViewModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ViewModel; sourceTree = "<group>"; };
+		C5EBCFF625981A6300AF958D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD92F4D4517D919BAAA1442F /* Pods-Instant Instructor Team.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instant Instructor Team.release.xcconfig"; path = "Target Support Files/Pods-Instant Instructor Team/Pods-Instant Instructor Team.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +49,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33EEF6E88F739C8566B9009F /* Pods_Instant_Instructor_Team.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E66540119BD16A932395D05 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B703C1DB5A26A6F541189F26 /* Pods_Instant_Instructor_Team.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C5EBCFC42598178C00AF958D = {
 			isa = PBXGroup;
 			children = (
 				C5EBCFCF2598178C00AF958D /* Instant Instructor Team */,
 				C5EBCFCE2598178C00AF958D /* Products */,
+				DAB6AB964C5DBE8A560237E5 /* Pods */,
+				6E66540119BD16A932395D05 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +85,40 @@
 		C5EBCFCF2598178C00AF958D /* Instant Instructor Team */ = {
 			isa = PBXGroup;
 			children = (
+				C5EBCFEC25981A2F00AF958D /* Model */,
+				C5EBCFED25981A2F00AF958D /* Utils */,
+				C5EBCFEE25981A2F00AF958D /* View */,
+				C5EBCFEF25981A2F00AF958D /* ViewModel */,
+				C5EBCFEA25981A1B00AF958D /* Controller */,
+				C5EBCFE7259819D300AF958D /* API */,
+				C5EBCFE9259819DC00AF958D /* New Group */,
 				C5EBCFD02598178C00AF958D /* AppDelegate.swift */,
 				C5EBCFD22598178C00AF958D /* SceneDelegate.swift */,
+				C5EBCFF625981A6300AF958D /* Assets.xcassets */,
 				C5EBCFD42598178C00AF958D /* ViewController.swift */,
 				C5EBCFD62598178C00AF958D /* Main.storyboard */,
-				C5EBCFDC2598179C00AF958D /* Assets.xcassets */,
 				C5EBCFDE2598179C00AF958D /* LaunchScreen.storyboard */,
 				C5EBCFE12598179C00AF958D /* Info.plist */,
 				C5EBCFD92598178C00AF958D /* Instant_Instructor_Team.xcdatamodeld */,
 			);
 			path = "Instant Instructor Team";
+			sourceTree = "<group>";
+		};
+		C5EBCFE9259819DC00AF958D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		DAB6AB964C5DBE8A560237E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91CD440722E6E1EA172BD102 /* Pods-Instant Instructor Team.debug.xcconfig */,
+				DD92F4D4517D919BAAA1442F /* Pods-Instant Instructor Team.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5EBCFE42598179C00AF958D /* Build configuration list for PBXNativeTarget "Instant Instructor Team" */;
 			buildPhases = (
+				0324AD8689D9AAE75A3A78A4 /* [CP] Check Pods Manifest.lock */,
 				C5EBCFC92598178C00AF958D /* Sources */,
 				C5EBCFCA2598178C00AF958D /* Frameworks */,
 				C5EBCFCB2598178C00AF958D /* Resources */,
+				08C8A7E333E25874831879D3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,13 +181,61 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5EBCFF025981A3000AF958D /* Model in Resources */,
 				C5EBCFE02598179C00AF958D /* LaunchScreen.storyboard in Resources */,
-				C5EBCFDD2598179C00AF958D /* Assets.xcassets in Resources */,
+				C5EBCFF325981A3000AF958D /* ViewModel in Resources */,
+				C5EBCFE8259819D300AF958D /* API in Resources */,
+				C5EBCFEB25981A1B00AF958D /* Controller in Resources */,
+				C5EBCFF125981A3000AF958D /* Utils in Resources */,
 				C5EBCFD82598178C00AF958D /* Main.storyboard in Resources */,
+				C5EBCFF725981A6B00AF958D /* Assets.xcassets in Resources */,
+				C5EBCFF225981A3000AF958D /* View in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0324AD8689D9AAE75A3A78A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Instant Instructor Team-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		08C8A7E333E25874831879D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Instant Instructor Team/Pods-Instant Instructor Team-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Instant Instructor Team/Pods-Instant Instructor Team-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Instant Instructor Team/Pods-Instant Instructor Team-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C5EBCFC92598178C00AF958D /* Sources */ = {
@@ -286,6 +387,7 @@
 		};
 		C5EBCFE52598179C00AF958D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91CD440722E6E1EA172BD102 /* Pods-Instant Instructor Team.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +406,7 @@
 		};
 		C5EBCFE62598179C00AF958D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD92F4D4517D919BAAA1442F /* Pods-Instant Instructor Team.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
