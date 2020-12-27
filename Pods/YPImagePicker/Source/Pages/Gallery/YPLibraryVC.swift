@@ -243,8 +243,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         // Only intilialize picker if photo permission is Allowed by user.
         let status = PHPhotoLibrary.authorizationStatus()
         switch status {
-        case .authorized,
-             .limited:
+        case .authorized:
             block(true)
         case .restricted, .denied:
             let popup = YPPermissionDeniedPopup()
