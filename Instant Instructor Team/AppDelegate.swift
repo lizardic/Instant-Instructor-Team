@@ -15,13 +15,18 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let gcmMessageIDKey = NSUUID().uuidString
-
+    
+    /**
+     When the application finishes launching, application connects to Firebase and asks to register for certain notifications
+    */
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         attemptToRegisterForNotifications(application: application)
         return true
     }
-    
+    /**
+     Attempts to register the current application for notifications 
+    */
     func attemptToRegisterForNotifications(application: UIApplication) {
         Messaging.messaging().delegate = self
         UNUserNotificationCenter.current().delegate = self
