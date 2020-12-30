@@ -49,12 +49,12 @@ class MainTabController: UITabBarController {
     }
     
     // MARK: - Helpers
-    
+    /**  Creates a viewControllers array and sets the view controllers of the UITabBarController to those that were constructed to create the viewControllers array. These view controllers are embedded in UINavigationController to allow for helpful segues between them and other view controllers.  */
     func configureViewControllers(withUser user: User) {
         view.backgroundColor = .white
         self.delegate = self
         
-        let layout = UICollectionViewFlowLayout()
+        let layout = UICollectionViewFlowLayout() // Necessary to initialize UICollectionViewController FeedController
         let feed = templateNavigationController(unselectedImage: #imageLiteral(resourceName: "home_unselected"), selectedImage: #imageLiteral(resourceName: "home_selected"), rootViewController: FeedController(collectionViewLayout: layout))
         
         let search = templateNavigationController(unselectedImage: #imageLiteral(resourceName: "search_unselected"), selectedImage: #imageLiteral(resourceName: "search_selected"), rootViewController: SearchController(config: .all))
@@ -71,6 +71,7 @@ class MainTabController: UITabBarController {
         tabBar.tintColor = .black
     }
     
+    /**  Given a view controller, an image to display when the user is using the corresponding view controller, and another image to display when the user is not using the corresponding view controller, templateNavigationController creates a UINavigationController with this view controller */
     func templateNavigationController(unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController) -> UINavigationController {
         let nav = UINavigationController(rootViewController: rootViewController)
         nav.tabBarItem.image = unselectedImage
