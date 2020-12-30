@@ -27,6 +27,10 @@ class FeedCell: UICollectionViewCell {
     
     weak var delegate: FeedCellDelegate?
     
+    
+    /**
+            profileImageView represents the user's profile picture in the top left of a post.
+     */
     private lazy var profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -41,6 +45,9 @@ class FeedCell: UICollectionViewCell {
         return iv
     }()
     
+    /**
+            usernameButton represents the user's username next to his profile picture on a post.
+     */
     private lazy var usernameButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitleColor(.black, for: .normal)
@@ -49,6 +56,9 @@ class FeedCell: UICollectionViewCell {
         return button
     }()
     
+    /**
+            optionsButton represents the ... options button on the top right of a post
+     */
     private lazy var optionsButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "ellipsis"), for: .normal)
@@ -57,6 +67,9 @@ class FeedCell: UICollectionViewCell {
         return button
     }()
     
+    /**
+        postImageView represents the image of a post.
+     */
     private let postImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -66,6 +79,10 @@ class FeedCell: UICollectionViewCell {
         return iv
     }()
     
+    /**
+            likeButton represents the like button on the bottom left of a post
+     */
+    
     lazy var likeButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "like_unselected"), for: .normal)
@@ -74,6 +91,9 @@ class FeedCell: UICollectionViewCell {
         return button
     }()
     
+    /**
+            commentButton represents the comment button on the bottom left of a post, to the left of the likeButton
+     */
     private lazy var commentButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "comment"), for: .normal)
@@ -82,13 +102,18 @@ class FeedCell: UICollectionViewCell {
         return button
     }()
     
+    /**
+            shareButton represents the share button on the bottom left of a post, to the left of the commentButton
+     */
     private lazy var shareButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "send2"), for: .normal)
         button.tintColor = .black
         return button
     }()
-    
+    /**
+            likesLabel represents the amount of likes a post has, on the bottom left of the post underneath the like/comment/share buttons
+     */
     private lazy var  likesLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 13)
@@ -100,12 +125,19 @@ class FeedCell: UICollectionViewCell {
         return label
     }()
     
+    /**
+            captionLabel represents the caption of a post, underneath the likesLabel.
+     */
+    
     let captionLabel: ActiveLabel = {
         let label = ActiveLabel()
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
+    /**
+     
+     */
     private let postTimeLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12)

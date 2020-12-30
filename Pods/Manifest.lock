@@ -356,7 +356,7 @@ PODS:
     - nanopb/encode (= 2.30906.0)
   - nanopb/decode (2.30906.0)
   - nanopb/encode (2.30906.0)
-  - PromisesObjC (1.2.11)
+  - PromisesObjC (1.2.12)
   - PryntTrimmerView (4.0.2)
   - SDWebImage (5.10.1):
     - SDWebImage/Core (= 5.10.1)
@@ -433,7 +433,7 @@ SPEC CHECKSUMS:
   JGProgressHUD: 62658b14e72cccf179efc7a13bcb54d30b92fc22
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
-  PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
   SDWebImage: f66a16b95183b92ed6b965ad21d33167bc07612d
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
