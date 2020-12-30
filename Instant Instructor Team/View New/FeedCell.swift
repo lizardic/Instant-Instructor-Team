@@ -114,7 +114,7 @@ class FeedCell: UICollectionViewCell {
     }()
         
     // MARK: - Lifecycle
-    
+    /** Sets up the cell using the labels and buttons defined above and setting the constraints that put them in the proper place relative to one another */
     override init(frame: CGRect) {
         super.init(frame: frame)
         

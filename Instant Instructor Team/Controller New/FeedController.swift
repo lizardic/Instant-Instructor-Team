@@ -96,7 +96,7 @@ class FeedController: UICollectionViewController {
     }
     
     // MARK: - Helpers
-    
+    /** Sets up collection view of posts for the user feed using FeedCells and navigation item buttons as well as handling refreshing the page when there is new information to update the page with */
     func configureUI() {
         collectionView.backgroundColor = .white
         collectionView.register(FeedCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -120,10 +120,12 @@ class FeedController: UICollectionViewController {
 // MARK: - UICollectionViewDataSource
 
 extension FeedController {
+    /**  Determines number of cells in the collection view, where each cell represents a post */
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return post == nil ? posts.count : 1
     }
     
+    /**  Determines the type of each cell in the collection view, where each cell represents a post */
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FeedCell
         cell.delegate = self
@@ -144,6 +146,7 @@ extension FeedController {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension FeedController: UICollectionViewDelegateFlowLayout {
+      /**  Determines size of each cell in the collection view, where each cell represents a post */
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.width
         var height = width + 8 + 40 + 8

@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     /**
-     Attempts to register the current application for notifications 
+     Attempts to register the current application for notification authorizations specified in the list options using UNUserNotificationCenter
     */
     func attemptToRegisterForNotifications(application: UIApplication) {
         Messaging.messaging().delegate = self
