@@ -23,21 +23,28 @@ class LoginController: UIViewController {
         let lb = UILabel()
         lb.font = .systemFont(ofSize: 30)
         lb.text = "Instant Instructor"
+        lb.textColor=UIColor(white: 1, alpha: 1)
         return lb
     }()
     
+    /** This represents the text field to put your email address for logging in , using the CustomTextField class.
+     */
     private let emailTextField: CustomTextField = {
         let tf = CustomTextField(placeholder: "Email")
         tf.keyboardType = .emailAddress
         return tf
     }()
     
+    /** This represents the text field to put your password for loggging in , using the CustomTextField class.
+     */
     private let passwordTextField: UITextField = {
         let tf = CustomTextField(placeholder: "Password")
         tf.isSecureTextEntry = true
         return tf
     }()
     
+    /** This represents the login button, which you press after putting your email and password in. It connects to the firebase server to check if your email and password are valid.
+     */
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Log In", for: .normal)
@@ -51,12 +58,15 @@ class LoginController: UIViewController {
         return button
     }()
     
+    /** This represents the forgot password part of the login page, clicking it will move you to a new page where you can reset your password.
+    */
     private let forgotPasswordButton: UIButton = {
         let button = UIButton(type: .system)
         button.attributedTitle(firstPart: "Forgot your password?", secondPart: "Get help signing in.")
         button.addTarget(self, action: #selector(handleShowResetPassword), for: .touchUpInside)
         return button
     }()
+
     /** dontHaveAccountButton represents the button that the users select when they currently do not have an account to login with, so they are redirected to the RegistrationController so that they can create an account
      */
     private let dontHaveAccountButton: UIButton = {
@@ -124,7 +134,7 @@ class LoginController: UIViewController {
         
         view.addSubview(appNameLabel)
         appNameLabel.centerX(inView: view)
-        appNameLabel.setDimensions(height: 80, width: 120)
+        appNameLabel.setDimensions(height: 80, width: 220)
         appNameLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
         
         let stack = UIStackView(arrangedSubviews: [emailTextField, passwordTextField,
