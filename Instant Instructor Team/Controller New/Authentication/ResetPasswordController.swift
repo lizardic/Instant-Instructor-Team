@@ -21,10 +21,12 @@ class ResetPasswordController: UIViewController {
     weak var delegate: ResetPasswordControllerDelegate?
     var email: String?
     
-    private let iconImage: UIImageView = {
-        let iv = UIImageView(image: #imageLiteral(resourceName: "Instagram_logo_white"))
-        iv.contentMode = .scaleAspectFill
-        return iv
+    private let appNameLabel: UILabel = {
+        let lb = UILabel()
+        lb.font = .systemFont(ofSize: 30)
+        lb.text = "Instant Instructor"
+        lb.textColor=UIColor(white: 1, alpha: 1)
+        return lb
     }()
     
     private let resetPasswordButton: UIButton = {
@@ -97,17 +99,17 @@ class ResetPasswordController: UIViewController {
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor,
                           paddingTop: 16, paddingLeft: 16)
         
-        view.addSubview(iconImage)
-        iconImage.centerX(inView: view)
-        iconImage.setDimensions(height: 80, width: 120)
-        iconImage.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
+        view.addSubview(appNameLabel)
+        appNameLabel.centerX(inView: view)
+        appNameLabel.setDimensions(height: 80, width: 220)
+        appNameLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
         
         let stack = UIStackView(arrangedSubviews: [emailTextField, resetPasswordButton])
         stack.axis = .vertical
         stack.spacing = 20
         
         view.addSubview(stack)
-        stack.anchor(top: iconImage.bottomAnchor, left: view.leftAnchor,
+        stack.anchor(top: appNameLabel.bottomAnchor, left: view.leftAnchor,
                      right: view.rightAnchor, paddingTop: 32, paddingLeft: 32, paddingRight: 32)
     }
 }

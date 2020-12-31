@@ -19,12 +19,12 @@ class LoginController: UIViewController {
     private var viewModel = LoginViewModel()
     weak var delegate: AuthenticationDelegate?
     
-
-    private let appNameTextField: UITextField = {
-        let tf = UITextField()
-        tf.font = .systemFont(ofSize: 30)
-        tf.text = "Instant Instructor"
-        return tf
+    private let appNameLabel: UILabel = {
+        let lb = UILabel()
+        lb.font = .systemFont(ofSize: 30)
+        lb.text = "Instant Instructor"
+        lb.textColor=UIColor(white: 1, alpha: 1)
+        return lb
     }()
     
     /** This represents the text field to put your email address for logging in , using the CustomTextField class.
@@ -132,10 +132,10 @@ class LoginController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .black
         
-        view.addSubview(appNameTextField)
-        appNameTextField.centerX(inView: view)
-        appNameTextField.setDimensions(height: 80, width: 120)
-        appNameTextField.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
+        view.addSubview(appNameLabel)
+        appNameLabel.centerX(inView: view)
+        appNameLabel.setDimensions(height: 80, width: 220)
+        appNameLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
         
         let stack = UIStackView(arrangedSubviews: [emailTextField, passwordTextField,
                                                    loginButton, forgotPasswordButton])
@@ -143,7 +143,7 @@ class LoginController: UIViewController {
         stack.spacing = 20
         
         view.addSubview(stack)
-        stack.anchor(top: appNameTextField.bottomAnchor, left: view.leftAnchor,
+        stack.anchor(top: appNameLabel.bottomAnchor, left: view.leftAnchor,
                      right: view.rightAnchor, paddingTop: 32, paddingLeft: 32, paddingRight: 32)
         
         view.addSubview(dontHaveAccountButton)
