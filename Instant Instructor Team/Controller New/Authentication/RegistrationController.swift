@@ -16,6 +16,8 @@ class RegistrationController: UIViewController {
     private var profileImage: UIImage?
     weak var delegate: AuthenticationDelegate?
     
+    /** plushPhotoButton represents the button that the user selects to choose their profile picture when registering, at top
+    */
     private let plushPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "plus_photo"), for: .normal)
@@ -24,21 +26,42 @@ class RegistrationController: UIViewController {
         return button
     }()
     
+    /** emailTextField represents the text field that the user selects to enter their email when registering, below plushPhotoButton
+    */
     private let emailTextField: CustomTextField = {
         let tf = CustomTextField(placeholder: "Email")
         tf.keyboardType = .emailAddress
+        tf.autocapitalizationType = .none
         return tf
     }()
     
+    /** passwordTextField represents the text field that the user selects to enter their password when registering, below emailTextField
+    */
     private let passwordTextField: UITextField = {
         let tf = CustomTextField(placeholder: "Password")
         tf.isSecureTextEntry = true
+        tf.autocapitalizationType = .none
         return tf
     }()
     
-    private let fullnameTextField = CustomTextField(placeholder: "Fullname")
-    private let usernameTextField = CustomTextField(placeholder: "Username")
+    /** fullnameTextField represents the text field that the user selects to enter their full name when registering, below passwordTextField
+    */
+    private let fullnameTextField = {
+        let tf = CustomTextField(placeholder: "Full Name")
+        tf.autocapitalizationType = .none
+        return tf
+    }()
     
+    /** usernameTextField represents the text field that the user selects to enter their username when registering, below fullnameTextField
+    */
+    private let usernameTextField = {
+        let tf = CustomTextField(placeholder: "Username")
+        tf.autocapitalizationType = .none
+        return tf
+    }()
+    
+    /** signUpButton represents the button that the user selects to register, below usernameTextField
+    */
     private let signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
@@ -52,6 +75,8 @@ class RegistrationController: UIViewController {
         return button
     }()
     
+    /** alreadyHaveAccountButton represents the button that the user selects to indicate that they have an account they would like into so it redirects to LoginController, below usernameTextField
+    */
     private let alreadyHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
         button.attributedTitle(firstPart: "Already have an account?", secondPart: "Log In")
@@ -94,6 +119,8 @@ class RegistrationController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    /** textDidChange is called whenever a user is typing in the textfield. It is used to update the information in the ViewModel so that we know when the form is valid i.e. when all the necessary fields have been filled in
+    */
     @objc func textDidChange(sender: UITextField) {
         if sender == emailTextField {
             viewModel.email = sender.text
@@ -118,6 +145,8 @@ class RegistrationController: UIViewController {
     
     // MARK: - Helpers
     
+    /** configureUI sets up the display for the RegistrationController by putting the photo selection button, the textfields, and sign up button, and already have account buttons aligned vertically and centered
+    */
     func configureUI() {
         configureGradientLayer()
         
@@ -141,6 +170,8 @@ class RegistrationController: UIViewController {
         alreadyHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
     }
     
+    /** Adds observers that respond to editing in the either the email, password, full name, or username text fields, calling textDidChange whenever editing occurs
+    */
     func configureNotificationObservers() {
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)

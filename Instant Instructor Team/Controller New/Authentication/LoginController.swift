@@ -23,7 +23,7 @@ class LoginController: UIViewController {
         let lb = UILabel()
         lb.font = .systemFont(ofSize: 30)
         lb.text = "Instant Instructor"
-        return tf
+        return lb
     }()
     
     private let emailTextField: CustomTextField = {
