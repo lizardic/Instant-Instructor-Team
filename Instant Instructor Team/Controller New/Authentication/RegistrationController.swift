@@ -46,15 +46,15 @@ class RegistrationController: UIViewController {
     
     /** fullnameTextField represents the text field that the user selects to enter their full name when registering, below passwordTextField
     */
-    private let fullnameTextField = {
+    private let fullnameTextField: UITextField = {
         let tf = CustomTextField(placeholder: "Full Name")
-        tf.autocapitalizationType = .none
+        tf.autocapitalizationType = .words
         return tf
     }()
     
     /** usernameTextField represents the text field that the user selects to enter their username when registering, below fullnameTextField
     */
-    private let usernameTextField = {
+    private let usernameTextField: UITextField = {
         let tf = CustomTextField(placeholder: "Username")
         tf.autocapitalizationType = .none
         return tf

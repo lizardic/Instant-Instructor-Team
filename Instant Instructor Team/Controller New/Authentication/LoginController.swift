@@ -32,6 +32,7 @@ class LoginController: UIViewController {
     private let emailTextField: CustomTextField = {
         let tf = CustomTextField(placeholder: "Email")
         tf.keyboardType = .emailAddress
+        tf.autocapitalizationType = .none
         return tf
     }()
     
@@ -40,6 +41,7 @@ class LoginController: UIViewController {
     private let passwordTextField: UITextField = {
         let tf = CustomTextField(placeholder: "Password")
         tf.isSecureTextEntry = true
+        tf.autocapitalizationType = .none
         return tf
     }()
     
