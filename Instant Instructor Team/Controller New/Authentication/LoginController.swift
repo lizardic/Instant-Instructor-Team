@@ -19,24 +19,32 @@ class LoginController: UIViewController {
     private var viewModel = LoginViewModel()
     weak var delegate: AuthenticationDelegate?
     
+    /** This  represents the "Instagram" logo, a static image at the top of the login page.
+     */
     private let iconImage: UIImageView = {
         let iv = UIImageView(image: #imageLiteral(resourceName: "Instagram_logo_white"))
         iv.contentMode = .scaleAspectFill
         return iv
     }()
     
+    /** This represents the text field to put your email address for logging in , using the CustomTextField class.
+     */
     private let emailTextField: CustomTextField = {
         let tf = CustomTextField(placeholder: "Email")
         tf.keyboardType = .emailAddress
         return tf
     }()
     
+    /** This represents the text field to put your password for loggging in , using the CustomTextField class.
+     */
     private let passwordTextField: UITextField = {
         let tf = CustomTextField(placeholder: "Password")
         tf.isSecureTextEntry = true
         return tf
     }()
     
+    /** This represents the login button, which you press after putting your email and password in. It connects to the firebase server to check if your email and password are valid.
+     */
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Log In", for: .normal)
@@ -50,6 +58,8 @@ class LoginController: UIViewController {
         return button
     }()
     
+    /** This represents the forgot password part of the login page, clicking it will move you to a new page where you can reset your password.
+    */
     private let forgotPasswordButton: UIButton = {
         let button = UIButton(type: .system)
         button.attributedTitle(firstPart: "Forgot your password?", secondPart: "Get help signing in.")
@@ -57,6 +67,8 @@ class LoginController: UIViewController {
         return button
     }()
     
+    /** This represents the don't have an account part of the login page, clicking it will move you to a new page where you can sign up for an account.
+     */
     private let dontHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
         button.attributedTitle(firstPart: "Don't have an account?", secondPart: "Sign Up")
