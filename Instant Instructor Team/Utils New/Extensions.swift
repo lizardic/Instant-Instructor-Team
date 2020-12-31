@@ -12,6 +12,8 @@ import JGProgressHUD
 extension UIViewController {
     static let hud = JGProgressHUD(style: .dark)
     
+    /** Gives the view controller a gradient with the specified colors spanning the entire view controller
+    */
     func configureGradientLayer() {
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
@@ -38,6 +40,8 @@ extension UIViewController {
 }
 
 extension UIButton {
+    /** Gives a UIButton a special title in which the first part of the button's text is normal and the second part is bold
+    */
     func attributedTitle(firstPart: String, secondPart: String) {
         let atts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.87), .font: UIFont.systemFont(ofSize: 16)]
         let attributedTitle = NSMutableAttributedString(string: "\(firstPart) ", attributes: atts)
