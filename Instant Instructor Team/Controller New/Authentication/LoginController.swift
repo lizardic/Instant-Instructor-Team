@@ -19,12 +19,12 @@ class LoginController: UIViewController {
     private var viewModel = LoginViewModel()
     weak var delegate: AuthenticationDelegate?
     
-    /** This  represents the "Instagram" logo, a static image at the top of the login page.
-     */
-    private let iconImage: UIImageView = {
-        let iv = UIImageView(image: #imageLiteral(resourceName: "Instagram_logo_white"))
-        iv.contentMode = .scaleAspectFill
-        return iv
+
+    private let appNameTextField: UITextField = {
+        let tf = UITextField()
+        tf.font = .systemFont(ofSize: 30)
+        tf.text = "Instant Instructor"
+        return tf
     }()
     
     /** This represents the text field to put your email address for logging in , using the CustomTextField class.
@@ -66,8 +66,8 @@ class LoginController: UIViewController {
         button.addTarget(self, action: #selector(handleShowResetPassword), for: .touchUpInside)
         return button
     }()
-    
-    /** This represents the don't have an account part of the login page, clicking it will move you to a new page where you can sign up for an account.
+
+    /** dontHaveAccountButton represents the button that the users select when they currently do not have an account to login with, so they are redirected to the RegistrationController so that they can create an account
      */
     private let dontHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
@@ -124,17 +124,18 @@ class LoginController: UIViewController {
     }
         
     // MARK: - Helpers
-    
+    /** Sets up the login controller interface by giving it a gradient background, styling the navigation bar, an icon image, and adding textfields, and buttons to handle user login functionaity
+     */
     func configureUI() {
         configureGradientLayer()
         
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .black
         
-        view.addSubview(iconImage)
-        iconImage.centerX(inView: view)
-        iconImage.setDimensions(height: 80, width: 120)
-        iconImage.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
+        view.addSubview(appNameTextField)
+        appNameTextField.centerX(inView: view)
+        appNameTextField.setDimensions(height: 80, width: 120)
+        appNameTextField.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
         
         let stack = UIStackView(arrangedSubviews: [emailTextField, passwordTextField,
                                                    loginButton, forgotPasswordButton])
@@ -142,14 +143,15 @@ class LoginController: UIViewController {
         stack.spacing = 20
         
         view.addSubview(stack)
-        stack.anchor(top: iconImage.bottomAnchor, left: view.leftAnchor,
+        stack.anchor(top: appNameTextField.bottomAnchor, left: view.leftAnchor,
                      right: view.rightAnchor, paddingTop: 32, paddingLeft: 32, paddingRight: 32)
         
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.centerX(inView: view)
         dontHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
     }
-    
+    /** Adds observers that respond to editing in the either the email or password text fields, calling textDidChange whenever editing occurs
+    */
     func configureNotificationObservers() {
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)

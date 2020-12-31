@@ -28,8 +28,7 @@ class FeedCell: UICollectionViewCell {
     weak var delegate: FeedCellDelegate?
     
     
-    /**
-            profileImageView represents the user's profile picture in the top left of a post.
+    /** profileImageView represents the user's profile picture in the top left of a post.
      */
     private lazy var profileImageView: UIImageView = {
         let iv = UIImageView()
@@ -45,8 +44,7 @@ class FeedCell: UICollectionViewCell {
         return iv
     }()
     
-    /**
-            usernameButton represents the user's username next to his profile picture on a post.
+    /** usernameButton represents the user's username next to his profile picture on a post.
      */
     private lazy var usernameButton: UIButton = {
         let button = UIButton(type: .system)
@@ -56,8 +54,7 @@ class FeedCell: UICollectionViewCell {
         return button
     }()
     
-    /**
-            optionsButton represents the ... options button on the top right of a post
+    /** optionsButton represents the ... options button on the top right of a post
      */
     private lazy var optionsButton: UIButton = {
         let button = UIButton(type: .system)
@@ -67,8 +64,7 @@ class FeedCell: UICollectionViewCell {
         return button
     }()
     
-    /**
-        postImageView represents the image of a post.
+    /** postImageView represents the image of a post.
      */
     private let postImageView: UIImageView = {
         let iv = UIImageView()
@@ -79,8 +75,7 @@ class FeedCell: UICollectionViewCell {
         return iv
     }()
     
-    /**
-            likeButton represents the like button on the bottom left of a post
+    /** likeButton represents the like button on the bottom left of a post
      */
     
     lazy var likeButton: UIButton = {
@@ -91,8 +86,7 @@ class FeedCell: UICollectionViewCell {
         return button
     }()
     
-    /**
-            commentButton represents the comment button on the bottom left of a post, to the left of the likeButton
+    /** commentButton represents the comment button on the bottom left of a post, to the left of the likeButton
      */
     private lazy var commentButton: UIButton = {
         let button = UIButton(type: .system)
@@ -102,8 +96,7 @@ class FeedCell: UICollectionViewCell {
         return button
     }()
     
-    /**
-            shareButton represents the share button on the bottom left of a post, to the left of the commentButton
+    /** shareButton represents the share button on the bottom left of a post, to the left of the commentButton
      */
     private lazy var shareButton: UIButton = {
         let button = UIButton(type: .system)
@@ -111,8 +104,7 @@ class FeedCell: UICollectionViewCell {
         button.tintColor = .black
         return button
     }()
-    /**
-            likesLabel represents the amount of likes a post has, on the bottom left of the post underneath the like/comment/share buttons
+    /** likesLabel represents the amount of likes a post has, on the bottom left of the post underneath the like/comment/share buttons
      */
     private lazy var  likesLabel: UILabel = {
         let label = UILabel()
@@ -125,8 +117,7 @@ class FeedCell: UICollectionViewCell {
         return label
     }()
     
-    /**
-            captionLabel represents the caption of a post, underneath the likesLabel.
+    /** captionLabel represents the caption of a post, underneath the likesLabel.
      */
     
     let captionLabel: ActiveLabel = {
@@ -135,8 +126,7 @@ class FeedCell: UICollectionViewCell {
         return label
     }()
     
-    /**
-     
+    /** postTimeLabel represents the label that informs users of when the post was made, underneath the captionLabel
      */
     private let postTimeLabel: UILabel = {
         let label = UILabel()
@@ -146,7 +136,8 @@ class FeedCell: UICollectionViewCell {
     }()
         
     // MARK: - Lifecycle
-    /** Sets up the cell using the labels and buttons defined above and setting the constraints that put them in the proper place relative to one another */
+    /** Sets up the cell using the labels and buttons defined above and setting the constraints that put them in the proper place relative to one another
+     */
     override init(frame: CGRect) {
         super.init(frame: frame)
         

@@ -10,6 +10,8 @@ import UIKit
 
 class CustomTextField: UITextField {
     
+    /** Creates a text field with white text that is moderately sized and has a transparent white background. The textfield contains whatever text is given in parameter placeholder
+    */
     init(placeholder: String) {
         super.init(frame: .zero)
         
@@ -21,7 +23,6 @@ class CustomTextField: UITextField {
         borderStyle = .none
         textColor = .white
         keyboardAppearance = .dark
-        keyboardType = .emailAddress
         backgroundColor = UIColor(white: 1, alpha: 0.1)
         setHeight(50)
         attributedPlaceholder = NSAttributedString(string: placeholder,
