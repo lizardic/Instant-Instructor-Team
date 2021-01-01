@@ -23,7 +23,7 @@ class LoginController: UIViewController {
         let lb = UILabel()
         lb.font = .systemFont(ofSize: 30)
         lb.text = "Instant Instructor"
-        lb.textColor=UIColor(white: 1, alpha: 1)
+        lb.textColor = UIColor(white: 1, alpha: 1)
         return lb
     }()
     
@@ -32,6 +32,7 @@ class LoginController: UIViewController {
     private let emailTextField: CustomTextField = {
         let tf = CustomTextField(placeholder: "Email")
         tf.keyboardType = .emailAddress
+        tf.autocapitalization = .none
         return tf
     }()
     
@@ -40,6 +41,7 @@ class LoginController: UIViewController {
     private let passwordTextField: UITextField = {
         let tf = CustomTextField(placeholder: "Password")
         tf.isSecureTextEntry = true
+        tf.autocapitalization = .none
         return tf
     }()
     
