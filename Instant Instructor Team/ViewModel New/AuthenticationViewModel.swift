@@ -16,6 +16,7 @@ protocol AuthenticationViewModel {
     var formIsValid: Bool { get }
     var buttonBackgroundColor: UIColor { get }
     var buttonTitleColor: UIColor { get }
+    func displayError()
 }
 
 struct LoginViewModel: AuthenticationViewModel {
@@ -32,6 +33,17 @@ struct LoginViewModel: AuthenticationViewModel {
     
     var buttonTitleColor: UIColor {
         return formIsValid ? .white : UIColor(white: 1, alpha: 0.67)
+    }
+   func displayError(error: String) {
+        let alert = UIAlertController(title: "Failed Login Attempt", message: error, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Dismiss", style: .default) { (action) in
+            //what will happen when you click dismiss
+            print("Success")
+            
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+        
     }
 }
 
@@ -52,6 +64,18 @@ struct RegistrationViewModel: AuthenticationViewModel {
     
     var buttonTitleColor: UIColor {
         return formIsValid ? .white : UIColor(white: 1, alpha: 0.67)
+    }
+    
+    func displayError(error: String) {
+        let alert = UIAlertController(title: "Failed Login Attempt", message: error, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Dismiss", style: .default) { (action) in
+            //what will happen when you click dismiss
+            print("Success")
+            
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+        
     }
 }
 
