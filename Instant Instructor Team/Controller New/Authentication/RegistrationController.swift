@@ -94,6 +94,9 @@ class RegistrationController: UIViewController {
     
     // MARK: - Actions
     
+    /** This function 
+     
+     */
     @objc func handleSignUp() {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
@@ -107,7 +110,7 @@ class RegistrationController: UIViewController {
 
         AuthService.registerUser(withCredential: credentials) { error in
             if let error = error {
-                viewModel.displayError(error: error.localizedDescription)
+                self.displayError(error: " Sign up failed. Check your formatting and please try again.")
                 return
             }
             
@@ -178,6 +181,18 @@ class RegistrationController: UIViewController {
         fullnameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         usernameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
+    
+    func displayError(error: String) {
+         let alert = UIAlertController(title: "Failed Login Attempt", message: error, preferredStyle: .alert)
+         let action = UIAlertAction(title: "Dismiss", style: .default) { (action) in
+             //what will happen when you click dismiss
+             print("Success")
+             
+         }
+         alert.addAction(action)
+         present(alert, animated: true, completion: nil)
+         
+     }
 }
 
 // MARK: - FormViewModel

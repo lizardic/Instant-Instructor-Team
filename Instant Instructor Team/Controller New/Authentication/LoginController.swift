@@ -94,7 +94,7 @@ class LoginController: UIViewController {
         
         AuthService.logUserIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
-                viewModel.displayError(error: error.localizedDescription)
+                self.displayError(error: "Username or password is invalid.")
                 return
             }
             
@@ -160,6 +160,19 @@ class LoginController: UIViewController {
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
+    
+    func displayError(error: String) {
+         let alert = UIAlertController(title: "Failed Login Attempt", message: error, preferredStyle: .alert)
+         let action = UIAlertAction(title: "Dismiss", style: .default) { (action) in
+             //what will happen when you click dismiss
+             print("Success")
+             
+         }
+         alert.addAction(action)
+         present(alert, animated: true, completion: nil)
+         
+     }
+    
 }
 
 // MARK: - FormViewModel

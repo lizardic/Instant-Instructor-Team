@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 
+/** This struct is to help organize the data necessary for registering a new profile.
+ */
 struct AuthCredentials {
     let email: String
     let password: String
@@ -21,7 +23,9 @@ struct AuthService {
     static func logUserIn(withEmail email: String, password: String, completion: AuthDataResultCallback?) {
         Auth.auth().signIn(withEmail: email, password: password, completion: completion)
     }
-    
+    /** This function takes a struct of credentials, which contains an email, password, fullname, username and profileImage. It uses these to create a new profile
+         and store its information on FireBase.
+     */
     static func registerUser(withCredential credentials: AuthCredentials, completion: @escaping(Error?) -> Void) {
         
         ImageUploader.uploadImage(image: credentials.profileImage) { imageUrl in

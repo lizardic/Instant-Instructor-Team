@@ -8,7 +8,7 @@
 
 import UIKit
 
-/** This protocol is to help update the form based on what the user enters.
+/** This protocol is to help update the form based on what the user enters. It is used for the login/signup/forgot password page.
  */
 protocol FormViewModel {
     func updateForm()
@@ -21,7 +21,6 @@ protocol AuthenticationViewModel {
     var formIsValid: Bool { get }
     var buttonBackgroundColor: UIColor { get }
     var buttonTitleColor: UIColor { get }
-    func displayError()
 }
 /** This struct implements the AuthenticationViewModel and is for updating the login form based on what the user enters. It checks whether or not the email and password text fields are blank, and updates the colors of the login button accordingly. It also enables the button if both textfields are non-empty.
  */
@@ -39,17 +38,6 @@ struct LoginViewModel: AuthenticationViewModel {
     
     var buttonTitleColor: UIColor {
         return formIsValid ? .white : UIColor(white: 1, alpha: 0.67)
-    }
-   func displayError(error: String) {
-        let alert = UIAlertController(title: "Failed Login Attempt", message: error, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Dismiss", style: .default) { (action) in
-            //what will happen when you click dismiss
-            print("Success")
-            
-        }
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-        
     }
 }
 
@@ -74,19 +62,11 @@ struct RegistrationViewModel: AuthenticationViewModel {
         return formIsValid ? .white : UIColor(white: 1, alpha: 0.67)
     }
     
-    func displayError(error: String) {
-        let alert = UIAlertController(title: "Failed Login Attempt", message: error, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Dismiss", style: .default) { (action) in
-            //what will happen when you click dismiss
-            print("Success")
-            
-        }
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-        
-    }
+
 }
 
+/** This struct implements the AutheticationViewModel and is for updating the forgot password form based on what the user enters. It checks whether or not the email text field is blank, and updates the color of the forgot password button accordingly. It also enables the forgot password button if all text-fields are non empty.
+ */
 struct ResetPasswordViewModel: AuthenticationViewModel {
     var email: String?
 
