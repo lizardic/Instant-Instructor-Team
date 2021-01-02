@@ -19,6 +19,8 @@ class LoginController: UIViewController {
     private var viewModel = LoginViewModel()
     weak var delegate: AuthenticationDelegate?
     
+    /** This represents
+    */
     private let appNameLabel: UILabel = {
         let lb = UILabel()
         lb.font = .systemFont(ofSize: 30)
@@ -87,7 +89,8 @@ class LoginController: UIViewController {
     }
     
     // MARK: - Actions
-    
+    /** handleLogin() uses the email and password that are currently in the email and password text fields and attempts to login the user with Firebase email/password authentication using AuthService. If it doesn't work, an error message is displayed to the user
+    */
     @objc func handleLogin() {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
@@ -120,6 +123,8 @@ class LoginController: UIViewController {
         updateForm()
     }
     
+    /** handleShowResetPassword() creates a ResetPasswordController that the NavigationController pushes on top of the stack of view controllers
+    */
     @objc func handleShowResetPassword() {
         let controller = ResetPasswordController()
         controller.delegate = self
@@ -178,6 +183,8 @@ class LoginController: UIViewController {
 // MARK: - FormViewModel
 
 extension LoginController: FormViewModel {
+    /** updateForm() adjusts the loginButton colors and enabled property based whether or not the textfields have been filled in
+    */
     func updateForm() {
         loginButton.backgroundColor = viewModel.buttonBackgroundColor
         loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
