@@ -8,16 +8,22 @@
 
 import UIKit
 
+/** This protocol is to help update the form based on what the user enters.
+ */
 protocol FormViewModel {
     func updateForm()
 }
 
+/** This protocol is for authenticating forms with text fields, any class/struct conforming to this protocol needs to make sure the form is valid,
+     and make sure the button colors respond accordingly.
+ */
 protocol AuthenticationViewModel {
     var formIsValid: Bool { get }
     var buttonBackgroundColor: UIColor { get }
     var buttonTitleColor: UIColor { get }
 }
-
+/** This struct implements the AuthenticationViewModel and is for updating the login form based on what the user enters. It checks whether or not the email and password text fields are blank, and updates the colors of the login button accordingly. It also enables the button if both textfields are non-empty.
+ */
 struct LoginViewModel: AuthenticationViewModel {
     var email: String?
     var password: String?
@@ -35,6 +41,8 @@ struct LoginViewModel: AuthenticationViewModel {
     }
 }
 
+/** This struct implements the AuthenticationViewModel and is for updating the registration form based on what the user enters. It checks whether or not the email, password, fullname, and username text fields are blank, and updates the colors of the login button accordingly. It also enables the registration button if all text-fields are non empty.
+ */
 struct RegistrationViewModel: AuthenticationViewModel {
     var email: String?
     var password: String?
