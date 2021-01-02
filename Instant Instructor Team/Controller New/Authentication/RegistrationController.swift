@@ -93,7 +93,8 @@ class RegistrationController: UIViewController {
     }
     
     // MARK: - Actions
-    
+    /** handleSignUp() uses the email, password, full name, and username that are currently in the corresponding text fields to attempt to register the user up using a method in AuthService
+    */
     @objc func handleSignUp() {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
@@ -114,7 +115,8 @@ class RegistrationController: UIViewController {
             self.delegate?.authenticationDidComplete()
         }
     }
-    
+    /** handleShowLogin() pops the top view controller off of the stack of view controllers, which is RegistrationController in this case, displaying the previous view controller, LoginController
+     */
     @objc func handleShowLogin() {
         navigationController?.popViewController(animated: true)
     }
@@ -135,6 +137,8 @@ class RegistrationController: UIViewController {
         updateForm()
     }
     
+    /** handleProfilePhotoSelect() creates a UIImagePickerController, makes the RegistrationController the delegate of it, and then presents the image picker to the viewer so that they can select a photo
+    */
     @objc func handleProfilePhotoSelect() {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -183,6 +187,8 @@ class RegistrationController: UIViewController {
 // MARK: - FormViewModel
 
 extension RegistrationController: FormViewModel {
+    /** updateForm() adjusts the loginButton colors and enabled property based whether or not the textfields have been filled in
+    */
     func updateForm() {
         signUpButton.backgroundColor = viewModel.buttonBackgroundColor
         signUpButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
@@ -193,7 +199,8 @@ extension RegistrationController: FormViewModel {
 // MARK: - UIImagePickerControllerDelegate
 
 extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+    /** imagePickerController() is called when the user selects a photo. This photo is then stored and set as the image for the plushPhotoButton, which is adjusted within this function to ensure that the image is properly displayed and rounded. Then the image picker is dismissed so users can see the RegistrationController again
+    */
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         guard let selectedImage = info[.editedImage] as? UIImage else { return }
