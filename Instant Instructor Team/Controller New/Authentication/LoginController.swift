@@ -94,20 +94,22 @@ class LoginController: UIViewController {
         
         AuthService.logUserIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
-                print("DEBUG: Failed to log user in \(error.localizedDescription)")
+                viewModel.displayError(error: error.localizedDescription)
                 return
             }
             
             self.delegate?.authenticationDidComplete()
         }
     }
-    
+    /** handleShowSignUp() creates a RegistrationController that the NavigationController pushes on top of the stack of view controllers
+     */
     @objc func handleShowSignUp() {
         let controller = RegistrationController()
         controller.delegate = delegate
         navigationController?.pushViewController(controller, animated: true)
     }
-    
+    /** textDidChange(sender) responds to editing occuring in sender. We use the text that is currently in sender to update the LoginViewModel's email or password property, depending on which text field sender is. The form is also updated, adjusting the loginButton colors and enabled property
+    */
     @objc func textDidChange(sender: UITextField) {
         if sender == emailTextField {
             viewModel.email = sender.text
