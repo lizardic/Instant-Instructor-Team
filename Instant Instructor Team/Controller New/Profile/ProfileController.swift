@@ -71,7 +71,8 @@ class ProfileController: UICollectionViewController {
     }
     
     // MARK: - Helpers
-    
+    /** configureCollectionView() arranges the ProfileHeader (on top) and ProfileCell (under) on the screen, and also hanldes refreshing of the UI (refresh the data)
+     */
     func configureCollectionView() {
         navigationItem.title = user.username
         collectionView.backgroundColor = .white
@@ -130,6 +131,9 @@ extension ProfileController {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
+/** This extension is for defining the layout of the photo cards on your profile, making each post a rectangle, with
+     3 posts on each row.
+ */
 extension ProfileController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1

@@ -15,6 +15,9 @@ protocol ProfileHeaderDelegate: class {
     func header(_ profileHeader: ProfileHeader, wantsToViewFollowingFor user: User)
 }
 
+/** ProfileHeader defines the header of the profile page, which contains a profile picture, username, full name, number
+    of posts/follwers/following.
+ */
 class ProfileHeader: UICollectionReusableView {
     
     // MARK: - Properties
@@ -25,6 +28,8 @@ class ProfileHeader: UICollectionReusableView {
     
     weak var delegate: ProfileHeaderDelegate?
     
+    /** profileImageView is the profile picture of the user displayed in the top left of the header.
+     */
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -33,12 +38,16 @@ class ProfileHeader: UICollectionReusableView {
         return iv
     }()
     
+    /** nameLabel is the name of the user, displayed under the profile picture.
+     */
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 14)
         return label
     }()
     
+    /** editProfileFollowButton represents the button to edit your profile.
+     */
     private lazy var editProfileFollowButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Loading", for: .normal)
@@ -51,6 +60,8 @@ class ProfileHeader: UICollectionReusableView {
         return button
     }()
     
+    /** postsLabel represents the number of posts the user has.
+     */
     private let postsLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -58,6 +69,8 @@ class ProfileHeader: UICollectionReusableView {
         return label
     }()
     
+    /** followersLabel represents the number of users who are following the current user.
+     */
     private lazy var followersLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -70,6 +83,8 @@ class ProfileHeader: UICollectionReusableView {
         return label
     }()
     
+    /** followingLabel represents the number of users the current user is following.
+     */
     private lazy var followingLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -81,20 +96,23 @@ class ProfileHeader: UICollectionReusableView {
         
         return label
     }()
-    
+    /** gridButton represents the button which takes you to your posts in a grid view on your header.
+     */
     private let gridButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "grid"), for: .normal)
         return button
     }()
-    
+    /** listButton represents the button which takes you to your posts in a list view on your header.
+     */
     private let listButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "list"), for: .normal)
         button.tintColor = UIColor(white: 0, alpha: 0.2)
         return button
     }()
-    
+    /** bookmarkButton represents the button which takes you to the posts you've bookmarked.
+     */
     private let bookmarkButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "ribbon"), for: .normal)
@@ -103,7 +121,8 @@ class ProfileHeader: UICollectionReusableView {
     }()
     
     // MARK: - Lifecycle
-    
+    /** init() configures the UI of the header, placing every element created above into organized manner.
+     */
     override init(frame: CGRect) {
         super.init(frame: frame)
         

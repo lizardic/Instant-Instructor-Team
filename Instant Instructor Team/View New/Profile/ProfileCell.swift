@@ -8,6 +8,9 @@
 
 import UIKit
 
+/** This class defines a single cell (image) on the profile page.
+ */
+
 class ProfileCell: UICollectionViewCell {
     
     // MARK: - Properties
@@ -20,6 +23,8 @@ class ProfileCell: UICollectionViewCell {
         didSet { postImageView.image = photoImageView }
     }
     
+    /** postImageView() defines a UIImageView, which is a static image that completely fills the cell.
+     */
     private let postImageView: UIImageView = {
         let iv = UIImageView()
         iv.image = #imageLiteral(resourceName: "venom-7")
@@ -30,6 +35,8 @@ class ProfileCell: UICollectionViewCell {
     
     // MARK: - Lifecycle
     
+    /** init() intializes the cell with the image from postImageView()
+     */
     override init(frame: CGRect) {
         super.init(frame: frame)
         
