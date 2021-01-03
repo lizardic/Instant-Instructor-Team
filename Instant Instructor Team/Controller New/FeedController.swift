@@ -44,7 +44,9 @@ class FeedController: UICollectionViewController {
         let controller = ConversationsController()
         navigationController?.pushViewController(controller, animated: true)
     }
-    
+    /** handleLogout() attemps to log the user out, if successful it brings the user back to the login page. If not
+        it displays an error message.
+    */
     @objc func handleLogout() {
         do {
             try Auth.auth().signOut()

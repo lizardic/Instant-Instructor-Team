@@ -36,6 +36,9 @@ class MainTabController: UITabBarController {
         }
     }
     
+    /** checkIfUserIsLoggedIn() checks Firebase to see if there isn't a current user, if so it brings the LoginController
+         to the forefront of the UI so the user can log in / sign up.
+    */
     func checkIfUserIsLoggedIn() {
         if Auth.auth().currentUser == nil {
             DispatchQueue.main.async {

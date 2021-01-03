@@ -20,6 +20,8 @@ struct AuthCredentials {
 }
 
 struct AuthService {
+    /** This function takes a email and password string and attempts to login with them through Firebase.
+     */
     static func logUserIn(withEmail email: String, password: String, completion: AuthDataResultCallback?) {
         Auth.auth().signIn(withEmail: email, password: password, completion: completion)
     }

@@ -94,7 +94,7 @@ class RegistrationController: UIViewController {
     
     // MARK: - Actions
 
-    /** handleSignUp() uses the email, password, full name, and username that are currently in the corresponding text fields to attempt to register the user up using a method in AuthService
+    /** handleSignUp() uses the email, password, full name, and username that are currently in the corresponding text fields to attempt to register the user up using a method in AuthService,, if it fails it displays an error message to the user. 
     */
 
     @objc func handleSignUp() {
