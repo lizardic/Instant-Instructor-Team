@@ -19,7 +19,7 @@ class LoginController: UIViewController {
     private var viewModel = LoginViewModel()
     weak var delegate: AuthenticationDelegate?
     
-    /** This represents
+    /** This represents the logo of the app on the login page
     */
     private let appNameLabel: UILabel = {
         let lb = UILabel()

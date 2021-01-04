@@ -11,6 +11,9 @@ import Firebase
 typealias FirestoreCompletion = (Error?) -> Void
 
 struct UserService {
+    /** fetchUser() takes a uid and uses it to create a user struct based on the information pulled from
+        Firebase using the uid.
+     */
     static func fetchUser(withUid uid: String, completion: @escaping(User) -> Void) {
         COLLECTION_USERS.document(uid).getDocument { snapshot, error in
             guard let dictionary = snapshot?.data() else { return }

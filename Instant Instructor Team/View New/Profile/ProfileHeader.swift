@@ -191,7 +191,9 @@ class ProfileHeader: UICollectionReusableView {
     }
     
     // MARK: - Helpers
-    
+    /** This helper configure() gets the user data from ProfileHeaderViewModel, and edits the according variables
+         to display the data unique to the current user 
+     */
     func configure() {
         guard let viewModel = viewModel else { return }
                 

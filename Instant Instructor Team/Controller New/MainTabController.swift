@@ -102,7 +102,9 @@ class MainTabController: UITabBarController {
 } 
 
 // MARK: - AuthenticationDelegate
-
+/** This extension is for making sure that when the user logouts
+ 
+ */
 extension MainTabController: AuthenticationDelegate {
     func authenticationDidComplete() {
         fetchUser()

@@ -9,6 +9,9 @@
 import Foundation
 import Firebase
 
+/** The user struct represents a user with data pulled from Firebase, namely their email/fullname/profileImageUrl/username/uid/fcmToken. Our initilizer pulls the data
+    from the dictionary received from Firebase and stores it in constants/variables.
+ */
 struct User {
     let email: String
     var fullname: String
